@@ -183,6 +183,7 @@ ul li:hover a {
     font-size: 55px;
     color: var(--maincolor);
     user-select: none;
+    margin: 0;
 }
 
 .text>h1:hover {
