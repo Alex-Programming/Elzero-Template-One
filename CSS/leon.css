@@ -3,8 +3,12 @@
     margin: 0;
     box-sizing: border-box;
     text-transform: capitalize;
-    font-family: 'Work Sans', sans-serif;
     transition: var(--transition);
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    position: relative;
 }
 
 :root {
@@ -16,6 +20,7 @@
     --rem: 1rem;
     --padding: 60px;
 }
+
 ::-webkit-scrollbar {
     background-color: #F6F6F6;
     width: 10px;
@@ -317,7 +322,8 @@ ul li:hover a {
         text-shadow: 0 0 200px var(--maincolor);
         color: var(--maincolor);
     }
-    100%{
+
+    100% {
         text-shadow: var(--shadow);
         color: #ebeced;
     }
@@ -687,7 +693,7 @@ ul li:hover a {
     padding-bottom: var(--padding);
 }
 
-.contact-container > div:last-child {
+.contact-container>div:last-child {
     display: grid;
     justify-content: center;
     text-align: center;
@@ -695,48 +701,49 @@ ul li:hover a {
     padding-bottom: var(--padding);
 }
 
-.contact-container > div:last-child p {
+.contact-container>div:last-child p {
     color: #2c4755;
     font-size: xx-large;
     font-weight: 900;
     letter-spacing: -2px;
 }
 
-.contact-container > div:last-child a {
+.contact-container>div:last-child a {
     color: var(--maincolor);
     font-size: xx-large;
     font-weight: 800;
 }
 
-.contact-container > div:last-child div {
+.contact-container>div:last-child div {
     color: var(--maincolor2);
 }
 
-.contact-container > div:last-child div i {
+.contact-container>div:last-child div i {
     cursor: pointer;
     margin-left: 5px;
 }
 
-.contact-container > div:last-child div i:first-child {
+.contact-container>div:last-child div i:first-child {
     color: red;
 }
 
-.contact-container > div:last-child div i:first-child:hover {
+.contact-container>div:last-child div i:first-child:hover {
     text-shadow: 0 0 20px red;
 }
 
-.contact-container > div:last-child div i:nth-child(2) {
+.contact-container>div:last-child div i:nth-child(2) {
     color: #056cbd;
 }
 
-.contact-container > div:last-child div i:nth-child(2):hover {
+.contact-container>div:last-child div i:nth-child(2):hover {
     text-shadow: 0 0 20px #056cbd;
 }
-.contact-container > div:last-child div i:last-child {
+
+.contact-container>div:last-child div i:last-child {
     color: #2196f3;
 }
 
-.contact-container > div:last-child div i:last-child:hover {
+.contact-container>div:last-child div i:last-child:hover {
     text-shadow: 0 0 20px #2196f3;
 }
 
@@ -749,11 +756,11 @@ ul li:hover a {
         font-size: 80px;
     }
 
-    .contact-container > div:last-child p {
+    .contact-container>div:last-child p {
         font-size: x-large;
     }
 
-    .contact-container > div:last-child a {
+    .contact-container>div:last-child a {
         font-size: x-large;
     }
 }
@@ -769,15 +776,15 @@ ul li:hover a {
         line-height: .9;
     }
 
-    .contact-container > div:last-child p {
+    .contact-container>div:last-child p {
         font-size: large;
     }
 
-    .contact-container > div:last-child a {
+    .contact-container>div:last-child a {
         font-size: large;
     }
 
-    .contact-container > div:last-child div {
+    .contact-container>div:last-child div {
         font-size: x-small;
     }
 }
@@ -812,3 +819,71 @@ footer marquee span {
 }
 
 /* End Footer */
+
+/* Start Scroll To Top */
+
+.to-top {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 25px;
+    padding-top: 150vh;
+}
+
+.to-top a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: sticky;
+    top: calc(100vh - 50px);
+    transform: rotate(45deg);
+    border: 2px solid var(--maincolor);
+}
+
+.to-top a::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 0 0 0;
+    background-color: var(--maincolor);
+    transform: scale(0);
+    transition: var(--transition);
+}
+
+.to-top a:hover::before {
+    transform: scale(1);
+    opacity: .1;
+}
+
+.to-top a::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background-image: linear-gradient(135deg, var(--maincolor) 10px, 0, transparent);
+    background-repeat: no-repeat;
+    background-position: 8px 8px;
+}
+
+.to-top a:hover::after {
+    animation-name: translate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes translate {
+    25% {
+        transform: translate(-1px, -1px);
+    }
+
+    75% {
+        transform: translate(1px, 1px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* End Scroll To Top */
