@@ -837,7 +837,7 @@ footer marquee span {
     position: sticky;
     top: calc(100vh - 50px);
     transform: rotate(45deg);
-    border: 2px solid var(--maincolor);
+    border: 1px solid var(--maincolor);
 }
 
 .to-top a::before {
